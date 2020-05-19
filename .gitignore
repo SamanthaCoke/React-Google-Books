@@ -1,0 +1,5 @@
+node_modules
+package-lock.json
+Instructions
+MERNHerokuDeploy.md
+client/node_modules
