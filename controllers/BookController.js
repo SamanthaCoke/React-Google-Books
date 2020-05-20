@@ -3,7 +3,6 @@ const Book = require('../models/Book');
 
 module.exports = {
     create: function(req, res) {
-        console.log("IN create", req.body)
         Book.create(req.body)
         .then(book => {
             return res.json(book)
@@ -24,7 +23,7 @@ module.exports = {
     },
 
     delete: function(req, res) {
-        Book.remove(req.params.id)
+        Book.findOneAndDelete({_id: req.params.id})
         .then(result => {
             res.json(result)
         })

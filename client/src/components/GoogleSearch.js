@@ -40,6 +40,13 @@ class GoogleSearch extends Component {
             authors
         }
         console.log("saving this book", bookToSave)
+        axios.post('/api/books', bookToSave)
+        .then(res => {
+          console.log("was created", res.data)
+        })
+        .catch(err => {
+          console.log("massive failure", err)
+        })
     }
 
     render() {
