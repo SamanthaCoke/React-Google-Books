@@ -11,8 +11,8 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
-
-mongoose.connect("mongodb://localhost/googleBookSearch", {userNewUrlParser: true});
+let mongoURI = process.env.MONGODB_URI || "mongodb://localhost/googleBookSearch"
+mongoose.connect(mongoURI, {userNewUrlParser: true});
 
 app.use(routes);
 
